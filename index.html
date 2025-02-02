@@ -410,6 +410,51 @@ nav > div:last-child > .active:after {
 }
 
   </style>
+<style>
+body, html {
+    padding: 0;
+    margin: 0;
+overscroll-behavior: none;
+overflow: hidden;
+}
+    a {
+        text-decoration: none;
+        color: black;
+margin-left: 1em;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    a img.icon {
+display: inline-block;
+        height: 1em
+        margin: 0 0 -0.1em 0.3em
+    }
+    <script>
+    let mouseMoved = false;
+    const pointer = {
+        x: .5 * window.innerWidth,
+        y: .5 * window.innerHeight,
+    }
+    const params = {
+        pointNumber: 40,
+widthfactor: .3,
+mouseThreshold: .6,
+            spring: .4,
+            friction: .5
+    };
+    function updateMousePosition
+    (eX, eY) {
+        pointer.x = eX;
+        pointer.y = eY;
+    }
+    setupCanvas();
+    update(0)
+window.addEventListener(
+    "resize", setupCanvas);
+ </script>
+    
+</style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script>
     const data = [
@@ -775,5 +820,6 @@ async function start() {
 
 start()
   </script>
+        
 </body>
 </html>
